@@ -35,8 +35,8 @@ if(isset($_POST['btn'])){
     $gender=$_POST['gender'];
     $email=$_POST['email'];
     $password=$_POST['password'];
-    $sql = "INSERT INTO tbl_users (user_firstname, user_lastname,user_gender, user_email,user_password)
-VALUES ('$lname', '$gender', '$email','$password')";
+    $sql = "INSERT INTO tbl_users(user_firstname, user_lastname,user_gender, user_email,user_password)
+VALUES('$fname','$lname', '$gender', '$email','$password')";
 
 if ($conn->query($sql) === TRUE) {
   echo "New record created successfully";
