@@ -1,6 +1,6 @@
 <php
 
-echo "DEVOPS EXAMINATIONS PRACTICE";
+echo "exams";
 
 ?>
 <a href="registration.php">registration</a><br>

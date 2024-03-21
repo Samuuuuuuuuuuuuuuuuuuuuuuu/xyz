@@ -1,10 +1,48 @@
-<!DOCTYPE html> <html> <head> 	<title> Form to Register</title>
-</head>  <body>  <table> <form action="" method="POST">
-<tr><td>First Name</td><td><input type="text" name="fname" ></td></tr>
-<tr><td>Last name</td><td><input type="text" name="regnum"></td></tr>
-<tr><td>Gender</td><td><input type="text" name="regnum"></td></tr>
-<tr><td>Email</td><td><input type="text" name="regnum"></td></tr>
-<tr><td>password</td><td><input type="text" name="regnum"></td></tr>
-<tr><td><input type="submit" name="submit"></td>
-<td><a  href="index.php">View</a></td></tr>
-</form> </table></body> </html>
+<?php 
+require_once "config.php";
+?>
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Code</title>
+  </head>
+  <body><center>
+  <a href="index.php">Home</a>
+    <a href="registration.php">Registration Form</a>
+    <a href="login.php">Login Form</a><hr>
+    <h1>User Registration</h1>
+    <form action="" method="POST">
+  <label for="fname">First name:</label>
+  <input type="text" id="fname" name="fname"><br></br>
+  <label for="lname">Last name:</label><br>
+  <input type="text" id="lname" name="lname"><br>
+  <label for="gender">Gender:</label>
+  <input type="radio" id="Male" name="gender" value="Male" Checked>
+  <input type="radio" id="Fimale" name="gender" value="Female"><br>
+  <label for="emalil">email:</label>
+  <input type="email" id="email" name="email"><br>
+  <label for="password">Password:</label>
+  <input type="password" id="password" name="password"><br>
+  <button name="btn">REgistor</button>
+</form>
+  </body>
+</html>
+<?php
+if(isset($_POST['btn'])){
+    $fname=$_POST['fname'];
+    $lname=$_POST['lname'];
+    $gender=$_POST['gender'];
+    $email=$_POST['email'];
+    $password=$_POST['password'];
+    $sql = "INSERT INTO tbl_users (user_firstname, user_lastname,user_gender, user_email,user_password)
+VALUES ('$lname', '$gender', '$email','$password')";
+
+if ($conn->query($sql) === TRUE) {
+  echo "New record created successfully";
+} else {
+  echo "Error: " . $sql . "<br>" . $conn->error;
+}
+
+}
