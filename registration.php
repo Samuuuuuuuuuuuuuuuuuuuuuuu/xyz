@@ -10,8 +10,7 @@ require_once "config.php";
   </head>
   <body><center>
   <a href="index.php">Home</a>
-    <a href="registration.php">Registration Form</a>
-    <a href="login.php">Login Form</a><hr>
+    
     <h1>User Registration</h1>
     <form action="" method="POST">
   <label for="fname">First name:</label>
@@ -25,7 +24,7 @@ require_once "config.php";
   <input type="email" id="email" name="email"><br>
   <label for="password">Password:</label>
   <input type="password" id="password" name="password"><br>
-  <button name="btn">REgistor</button>
+  <button name="btn">Registerr</button>
 </form>
   </body>
 </html>
